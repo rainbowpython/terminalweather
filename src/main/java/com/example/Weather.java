@@ -17,10 +17,10 @@ public class Weather {
         .uri(URI.create("https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/" + city + "?unitGroup=metric&include=current&key=UCVG62VSNL8D8CJHSR2KXK6L5&contentType=json"))
         .method("GET", HttpRequest.BodyPublishers.noBody()).build();
         HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
-        System.out.println(response.body());
-        FileWriter file = new FileWriter("weather.json");
+        //System.out.println(response.body());
+        FileWriter file = new FileWriter("weather.txt");
         file.write(response.body());
-        
+        System.out.println(response.body().substring(response.body().indexOf("currentConditions")));
         for (int i = 0; i < response.body().length(); i++) {
             //System.out.println(response.body());
         }
