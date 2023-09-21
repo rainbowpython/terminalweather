@@ -9,6 +9,13 @@ import java.net.http.HttpResponse;
 
 import org.json.*;
 public class Weather {
+    private String current;
+    
+    public static final int CURRENT = 1;
+    private int precipitation;
+    private int windSpeed;
+    private double temp;
+    private String icon;
     Weather(){
 
     }
@@ -21,9 +28,15 @@ public class Weather {
         FileWriter file = new FileWriter("weather.txt");
         file.write(response.body());
         System.out.println(response.body().substring(response.body().indexOf("currentConditions")));
+        current = response.body().substring(response.body().indexOf("currentConditions"));
         for (int i = 0; i < response.body().length(); i++) {
             //System.out.println(response.body());
+            
         }
+        
     }
 
+    public String getCurrentWeather(){
+        return current;
+    }
 }
