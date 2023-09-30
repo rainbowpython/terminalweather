@@ -40,7 +40,12 @@ public class Weather {
         temp = current.substring(current.indexOf("temp\":")+6, current.indexOf(",", current.indexOf("temp\":")+1));
         icon = current.substring(current.indexOf("icon\":")+6, current.indexOf(",", current.indexOf("icon\":")+1));
         windDir = current.substring(current.indexOf("winddir\":")+9, current.indexOf(",", current.indexOf("winddir\":")+1));
+        
         System.out.println(precipitation);
+        System.out.println(windSpeed);
+        System.out.println(temp);
+        System.out.println(icon);
+        System.out.println(windDir);
     }
 
     public String getCurrentWeather(){
@@ -64,7 +69,7 @@ public class Weather {
 
     //returns string to determine icon
     public String getIcon(){
-        return icon;
+        return icon.substring(1,icon.length()-1);
     }
 
     //! probably dont use this lmao, unit unsure
@@ -72,6 +77,7 @@ public class Weather {
         return humidity;
     }
 
+    //in bearing degrees
     public String getWindDir(){
         return windDir;
     }
