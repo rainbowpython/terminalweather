@@ -40,7 +40,8 @@ public class Display {
             }
 
             if (line == 1) {
-                System.out.print("");
+                
+                System.out.print("It's " );
             }
             
             if (line == 2) {
