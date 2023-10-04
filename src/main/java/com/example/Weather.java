@@ -21,6 +21,7 @@ public class Weather {
     private String icon;
     private String humidity;
     private String windDir;
+    private String conditions;
     Weather(String city) throws IOException, InterruptedException{
         getWeather(city);
     }
@@ -40,6 +41,7 @@ public class Weather {
         temp = current.substring(current.indexOf("temp\":")+6, current.indexOf(",", current.indexOf("temp\":")+1));
         icon = current.substring(current.indexOf("icon\":")+6, current.indexOf(",", current.indexOf("icon\":")+1));
         windDir = current.substring(current.indexOf("winddir\":")+9, current.indexOf(",", current.indexOf("winddir\":")+1));
+        //conditions = current.substring(current.indexOf("conditions\":")+12, current.indexOf(",", current.indexOf("conditions \":")+1));
         
         System.out.println(precipitation);
         System.out.println(windSpeed);
