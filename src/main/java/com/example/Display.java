@@ -79,7 +79,7 @@ public class Display {
             if (line == 1) {
                 switch (weather.getIcon()){
                     case "rain":
-                        System.out.print("It's " + CYAN + "raining" + COLOR_RESET + "o utside");
+                        System.out.print("It's " + CYAN + "raining" + COLOR_RESET + " outside");
                     break;
 
                     case "cloudy":
@@ -137,9 +137,13 @@ public class Display {
             }
 
             if (line == 4) {
-                System.out.print(BLUE + "Day: " + calendar.get(Calendar.DAY_OF_WEEK));
+                String[] dayOfWeek = {"Sunday", "Monday", "Tuesday", "Wensday", "Thursday", "Friday", "Saturday"};
+                System.out.print(BLUE + "Day: " + COLOR_RESET + dayOfWeek[calendar.get(Calendar.DAY_OF_WEEK)+2]);
             }
-
+            
+            if (line == 5) {
+                System.out.print(BLUE + "Temp: " + COLOR_RESET + weather.getTemp() + "°F");
+            }
             System.out.println("");
             line++;
         }
