@@ -133,16 +133,20 @@ public class Display {
                         System.out.print(c);
                     }
                 }
-                
+            
             }
 
             if (line == 4) {
-                String[] dayOfWeek = {"Sunday", "Monday", "Tuesday", "Wensday", "Thursday", "Friday", "Saturday"};
-                System.out.print(BLUE + "Day: " + COLOR_RESET + dayOfWeek[calendar.get(Calendar.DAY_OF_WEEK)+2]);
+                String[] dayOfWeek = { "Tuesday", "Wensday", "Thursday", "Friday", "Saturday", "Sunday", "Monday",};
+                System.out.print(BLUE + "Day: " + COLOR_RESET + dayOfWeek[calendar.get(Calendar.DAY_OF_WEEK)]);
             }
             
             if (line == 5) {
                 System.out.print(BLUE + "Temp: " + COLOR_RESET + weather.getTemp() + "°F");
+            }
+
+            if (line == 6) {
+                System.out.print(BLUE + "Wind Speed: " + COLOR_RESET + weather.getWind + "°F");
             }
             System.out.println("");
             line++;
