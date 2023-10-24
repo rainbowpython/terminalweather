@@ -146,7 +146,11 @@ public class Display {
             }
 
             if (line == 6) {
-                System.out.print(BLUE + "Wind Speed: " + COLOR_RESET + weather.getWind + "°F");
+                System.out.print(BLUE + "Wind Speed: " + COLOR_RESET + weather.getWindSpeed() + "Mph");
+            }
+
+            if (line == 7) {
+                System.out.print(BLUE + "Humidity: " + COLOR_RESET + weather.getHumidity() + "");
             }
             System.out.println("");
             line++;
